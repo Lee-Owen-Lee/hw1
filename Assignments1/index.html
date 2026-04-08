@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>✨ 个人信息卡牌 ✨</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<div class="card-wrapper">
+  <h1 class="page-title">✨ 个人信息卡片 ✨</h1>
+
+  <div class="card">
+    <div class="card-inner">
+      <!-- 头像区域 (点击行为根据模式变化) -->
+      <div class="avatar-section">
+        <img class="avatar" id="avatarImg" 
+             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%237788aa'/%3E%3Ccircle cx='50' cy='38' r='14' fill='%23ffffff'/%3E%3Cpath d='M25 72 Q50 85 75 72' stroke='%23ffffff' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"
+             alt="个人头像" title="点击查看大图">
+        <div class="avatar-hint"></div>
+      </div>
+
+      <!-- 展示区域 (查看模式) -->
+      <div class="display-area" id="displayArea">
+        <div class="display-name" id="displayName"></div>
+        <div class="display-bio" id="displayBio"></div>
+      </div>
+
+      <!-- 查看模式按钮组 -->
+      <div class="view-actions" id="viewActions">
+        <button class="edit-profile-btn" id="editProfileBtn">✎ 编辑资料</button>
+        <button class="reset-btn" id="resetBtn">↻ 重置卡片</button>
+      </div>
+
+      <!-- 编辑区域 -->
+      <div class="edit-area hidden" id="editArea">
+        <div class="form-group">
+          <label><span class="icon-emoj">👤</span> 编辑姓名</label>
+          <input type="text" id="editName" placeholder="输入你的姓名" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label><span class="icon-emoj">📝</span> 编辑个人简介</label>
+          <textarea id="editBio" placeholder="介绍一下你自己吧，例如爱好、职业、个性签名..."></textarea>
+        </div>
+        <div class="edit-actions">
+          <button class="cancel-btn" id="cancelEditBtn">← 取消</button>
+          <button class="save-btn" id="saveBtn">💾 保存修改</button>
+        </div>
+        <div class="divider-light"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 头像预览模态框 -->
+<div class="avatar-modal" id="avatarModal">
+  <div class="modal-content">
+    <img id="modalImage" src="" alt="头像大图">
+  </div>
+</div>
+
+<input type="file" id="avatarUpload" accept="image/jpeg, image/png, image/webp, image/gif">
+
+<script src="scripts/scripts.js"></script>
+
+</body>
+</html>
